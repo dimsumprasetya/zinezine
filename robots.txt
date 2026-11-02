@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zinezine.online/sitemap.xml
