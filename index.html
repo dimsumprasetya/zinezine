@@ -280,7 +280,14 @@ footer .foot-kirim a{color:inherit;font-weight:700;text-decoration:underline;tex
 .tile span{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.85));color:#fff;font-family:var(--f-display);font-size:.95rem;line-height:1.05;letter-spacing:-.02em}
 @media (prefers-reduced-motion:reduce){.tile img{transition:none}}
 
-@media (max-width:760px){.slide{aspect-ratio:1/1}}
+/* teks carousel tidak menimpa foto: foto di atas, teks di panel sendiri */
+.slide.s-photo{flex-direction:column;background:#15161C}
+.s-photo img{position:relative;inset:auto;flex:1 1 0;min-height:0;width:100%;height:auto}
+.s-photo::after{display:none}
+.s-photo .slide-link{position:static;inset:auto;flex:0 0 auto;justify-content:flex-start;gap:8px;padding:14px 16px 8px;background:#15161C;border-top:3px solid var(--pink)}
+.s-photo .credit{position:static;max-width:none;margin:0;padding:0 16px 12px;background:#15161C;color:#cfcfd6}
+.s-photo .credit a{color:#cfcfd6}
+@media (max-width:760px){.s-photo .slide-link strong{font-size:1.35rem}}
 
 /* tiket dan pantau */
 .tix{margin:26px 0;border:3px solid var(--ink);background:var(--paper-2);padding:14px 16px}
