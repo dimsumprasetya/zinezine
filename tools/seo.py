@@ -22,6 +22,18 @@ HOME_DESC = ('Berita band indie Indonesia dan dunia: rilisan baru, band lama yan
              'daftar dengar, dan kalender konser serta festival. Diperbarui tiap hari.')
 
 
+def analytics_snippet():
+    # kode GoatCounter (mis. 'zinezine' untuk zinezine.goatcounter.com) ada di tools/analytics.txt; kosong = tidak dipasang
+    fp = os.path.join(ROOT, 'tools', 'analytics.txt')
+    code = open(fp, encoding='utf-8').read().strip() if os.path.exists(fp) else ''
+    if not re.fullmatch(r'[a-z0-9-]+', code):
+        return ''
+    return ('<script data-goatcounter="https://%s.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>' % code)
+
+
+ANALYTICS = analytics_snippet()
+
+
 def rd(p):
     with open(os.path.join(ROOT, p), encoding='utf-8', newline='') as f:
         return f.read()
@@ -217,6 +229,7 @@ for pid, body in posts:
 <meta name="twitter:image" content="{esc(img)}">
 <meta name="theme-color" content="#15161C">
 {jld(graph)}
+{ANALYTICS}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Special+Elite&family=Work+Sans:wght@400;500;700&display=swap">
@@ -282,6 +295,7 @@ block = f'''<!--SEO-START-->
 <meta property="og:locale" content="id_ID">
 <meta name="theme-color" content="#15161C">
 {jld(home_graph)}
+{ANALYTICS}
 <!--SEO-END-->'''
 if '<!--SEO-START-->' in src:
     src = re.sub(r'<!--SEO-START-->.*?<!--SEO-END-->', lambda _: block, src, flags=re.S)
