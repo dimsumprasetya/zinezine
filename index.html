@@ -346,21 +346,29 @@ footer .foot-kirim a{color:inherit;font-weight:700;text-decoration:underline;tex
 .emb.slotted[data-kind="sp"]{height:158px}
 body.has-dock{padding-bottom:76px}
 
-/* playlist pilihan */
-.plist{margin:34px 0}
-.plist .sec-head p a{font-weight:700}
-.plist .embeds{margin:18px 0 0}
-.plist-note{font-family:var(--f-type);font-size:.78rem;margin:10px 0 0;opacity:.85}
+/* playlist melayang (beranda saja) */
+#plfloat{position:fixed;right:max(12px,env(safe-area-inset-right,0px));bottom:max(12px,env(safe-area-inset-bottom,0px));z-index:80;width:min(360px,calc(100vw - 24px));display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+body.has-dock #plfloat{bottom:calc(max(12px,env(safe-area-inset-bottom,0px)) + 76px)}
+#plfloat .pf-box{width:100%;border:3px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--pink)}
+#plfloat .pf-box .emb-btn{border:0}
+#plfloat .pf-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:6px 10px;border-bottom:3px solid var(--ink);background:var(--sun);color:#15161C;font-family:var(--f-type);font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+#plfloat .pf-head button{border:2px solid #15161C;background:transparent;color:#15161C;font:inherit;font-size:.8rem;line-height:1;padding:2px 8px;cursor:pointer}
+#plfloat .pf-fab{display:none;width:52px;height:52px;border-radius:50%;border:3px solid var(--ink);background:var(--pink);color:#15161C;font-size:1.3rem;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+#plfloat.min .pf-box{display:none}
+#plfloat.min .pf-fab{display:block}
+#plfloat .emb.slotted[data-kind="sp"]{height:158px}
+#dk-float.inl{z-index:85}
+@media (prefers-reduced-motion:no-preference){#plfloat .pf-fab{transition:transform .15s}#plfloat .pf-fab:hover{transform:rotate(-6deg) scale(1.05)}}
 </style>
 </head>
 <body>
 
-<div id="home">
+<div id="home"><div id="plfloat" role="region" aria-label="Playlist pilihan zinezine"><div class="pf-box"><div class="pf-head"><span>Playlist zinezine</span><button type="button" id="pf-min" aria-label="Kecilkan playlist">&minus;</button></div><div class="emb" data-kind="sp" data-id="playlist/6Z1Im3Bc1oNoXMzCByUhec"><button type="button" class="emb-btn"><span class="emb-play" aria-hidden="true">&#9654;</span><span class="emb-txt"><strong>Pilihan zinezine</strong><small>Spotify &middot; diputar sambil kamu menjelajah</small></span></button></div></div><button type="button" class="pf-fab" id="pf-fab" aria-label="Buka playlist zinezine">&#9835;</button></div>
 <div class="wrap">
   <nav class="nav" aria-label="Menu utama">
     <a class="logo" href="#atas">zine<i>zine</i></a>
     <ul>
-      <li><a href="#cerita">Kabar Terbaru</a></li><li><a href="#playlist">Playlist</a></li>
+      <li><a href="#cerita">Kabar Terbaru</a></li>
       <li><a href="#rubrik">Daftar Dengar</a></li>
       <li><a href="#gigs">Kalender</a></li>
       <li><a href="#arsip">Arsip</a></li>
@@ -382,7 +390,7 @@ body.has-dock{padding-bottom:76px}
 
 <div class="wrap">
   <section id="wajah"><div class="sec-head"><h2>Wajah Edisi Ini</h2><p>Musisi yang kami tulis minggu ini. Klik fotonya untuk membaca ceritanya.</p></div><div class="strip"><a class="tile" href="#a-tv-priest-cartoons"><img data-img="tvp" alt="TV Priest"><span>TV Priest</span></a><a class="tile" href="#dd-pusakata"><img data-img="pusakata" alt="Pusakata"><span>Pusakata</span></a><a class="tile" href="#a-kembali-dunia"><img data-img="gbv" alt="Guided by Voices"><span>Guided by Voices</span></a><a class="tile" href="#a-kembali-dunia"><img data-img="dmb" alt="Dead Man&rsquo;s Bones"><span>Dead Man&rsquo;s Bones</span></a><a class="tile" href="#a-album-dunia-november"><img data-img="bitchos" alt="Los Bitchos"><span>Los Bitchos</span></a><a class="tile" href="#a-album-dunia-november"><img data-img="lot" alt="Land of Talk"><span>Land of Talk</span></a></div><p class="note">Foto: TV Priest (Paul Hudson, <a href="https://commons.wikimedia.org/wiki/File:TV_Priest_at_Rough_Trade_(52154094248).jpg" target="_blank" rel="noopener">CC BY 2.0</a>), Pusakata (Achmad Soerio Hutomo, <a href="https://commons.wikimedia.org/wiki/File:Payung_Teduh_Concert_2017_Cropped_Mohammad_Istiqamah_Djamad.jpg" target="_blank" rel="noopener">CC BY 2.0</a>), Guided by Voices (Tim Gerland, <a href="https://commons.wikimedia.org/wiki/File:Guided_by_Voices_The_Haunt,_Ithaca_NY,_2018.jpg" target="_blank" rel="noopener">CC BY 2.0</a>), Dead Man&rsquo;s Bones (Dustin Drew, <a href="https://commons.wikimedia.org/wiki/File:Ryan_Gosling_-_Dead_Man%27s_Bones_2_(cropped).jpg" target="_blank" rel="noopener">CC BY 2.0</a>), Los Bitchos (ManoSolo13241324, <a href="https://commons.wikimedia.org/wiki/File:Los_Bitchos_2022.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a>), Land of Talk (Levi Manchak, <a href="https://commons.wikimedia.org/wiki/File:Land_of_Talk_(27685894220).jpg" target="_blank" rel="noopener">CC BY 2.0</a>). Lewat Wikimedia Commons.</p></section>
-  <section id="playlist" class="plist"><div class="sec-head"><h2>Playlist Pilihan zinezine</h2><p>Lagu-lagu dari berita kami, diputar di sini sambil kamu menjelajah. Lagu tetap jalan saat pindah halaman.</p></div><div class="embeds"><div class="emb" data-kind="sp" data-id="playlist/6Z1Im3Bc1oNoXMzCByUhec"><button type="button" class="emb-btn"><span class="emb-play" aria-hidden="true">&#9654;</span><span class="emb-txt"><strong>Pilihan zinezine</strong><small>Spotify &middot; diputar di halaman ini setelah diklik</small></span></button></div></div><p class="plist-note">Tanpa masuk ke Spotify, pemutar hanya memutar cuplikan. <a href="https://open.spotify.com/playlist/6Z1Im3Bc1oNoXMzCByUhec" target="_blank" rel="noopener">Buka playlist di Spotify</a>.</p></section><section id="cerita">
+  <section id="cerita">
     <div class="sec-head"><h2>Kabar Terbaru</h2><p class="type">Diperbarui 12 November 2026. Klik satu kartu untuk membaca artikel lengkapnya.</p></div>
     <div class="stories">
       <article class="story"><img class="sph" src="https://i.ytimg.com/vi/h_lbc2niaU4/maxresdefault.jpg" alt="Iga Massardi, Ambivalensi (video lirik resmi)" loading="lazy"><span class="tag">Rilisan</span><h3><a class="stretch" href="#dd-iga-massardi">Iga Massardi Coba Pop Mellow lewat Ambivalensi</a></h3><p>Single solo vokalis Barasuara ini terbit 9 November, diproduseri Vega Antares, dan membuka jalan ke sebuah EP.</p><span class="more">Baca selengkapnya &rarr;</span><span class="by">Sumber: <a href="https://pophariini.com/sehidup-semusik/iga-massardi-olah-nuansa-pop-dalam-singel-ambivalensi/" target="_blank" rel="noopener">Pophariini</a></span></article>
@@ -493,11 +501,11 @@ body.has-dock{padding-bottom:76px}
     var vis=box&&box.offsetParent!==null;
     if(vis){
       var r=box.getBoundingClientRect();
-      fl.className='inl';fl.style.left=(r.left+window.pageXOffset)+'px';fl.style.top=(r.top+window.pageYOffset)+'px';
+      var fx=!!box.closest('#plfloat');fl.className='inl';fl.style.position=fx?'fixed':'';fl.style.left=(r.left+(fx?0:window.pageXOffset))+'px';fl.style.top=(r.top+(fx?0:window.pageYOffset))+'px';
       fl.style.width=r.width+'px';fl.style.height=r.height+'px';
       dock.hidden=true;document.body.classList.remove('has-dock');
     }else{
-      fl.className='bar';fl.style.left=fl.style.top=fl.style.width=fl.style.height='';
+      fl.className='bar';fl.style.position='';fl.style.left=fl.style.top=fl.style.width=fl.style.height='';
       dock.hidden=false;document.body.classList.add('has-dock');
     }
   }
@@ -569,5 +577,6 @@ body.has-dock{padding-bottom:76px}
 </script>
 
 
+<script>(function(){var f=document.getElementById("plfloat");if(!f)return;document.getElementById("pf-min").addEventListener("click",function(){f.classList.add("min");});document.getElementById("pf-fab").addEventListener("click",function(){f.classList.remove("min");});})();</script>
 </body>
 </html>
