@@ -1,0 +1,16 @@
+{
+ "a-dongker-batal": {"genre": ["Punk"], "kota": ["Bandung"], "keluarga": ["Rock"]},
+ "dd-akupergi": {"genre": ["Post-punk"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
+ "dd-nalara": {"genre": ["Folk rock"], "kota": ["Subang"], "keluarga": ["Rock"]},
+ "dd-haul": {"genre": ["Death metal"], "kota": ["Bandung"], "keluarga": ["Rock"]},
+ "dd-zorrrya": {"genre": ["Rock alternatif"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
+ "dd-rony-parulian": {"genre": ["Pop-rock"], "kota": [], "keluarga": ["Rock", "Pop"]},
+ "a-rumahsakit": {"genre": ["Indie rock"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
+ "dd-haira": {"genre": ["City pop"], "kota": [], "keluarga": ["Pop"]},
+ "dd-iga-massardi": {"genre": ["Pop mellow"], "kota": [], "keluarga": ["Pop"]},
+ "dd-teddy-adhitya": {"genre": ["R&B"], "kota": [], "keluarga": ["Pop"]},
+ "a-rimba-kyoto": {"genre": ["Pop belantara"], "kota": ["Jakarta"], "keluarga": ["Pop"]},
+ "dd-dia": {"genre": ["Hipdut"], "kota": [], "keluarga": []},
+ "dd-rei-naldy": {"genre": ["Jazz"], "kota": [], "keluarga": []},
+ "dd-branta": {"genre": [], "kota": ["Surabaya"], "keluarga": []}
+}

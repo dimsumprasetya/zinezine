@@ -253,6 +253,11 @@ urls = [f'<url><loc>{SITE}/</loc><lastmod>{TODAY}</lastmod><changefreq>daily</ch
 for pid, title, desc, date, img, is_vol in sorted(pages, key=lambda x: x[3], reverse=True):
     pr = '0.5' if is_vol else '0.8'
     urls.append(f'<url><loc>{SITE}/{pid}/</loc><lastmod>{date}</lastmod><changefreq>{"weekly" if is_vol else "monthly"}</changefreq><priority>{pr}</priority></url>')
+tag_dir = os.path.join(ROOT, 'tag')
+if os.path.isdir(tag_dir):
+    for tg in sorted(os.listdir(tag_dir)):
+        if os.path.exists(os.path.join(tag_dir, tg, 'index.html')):
+            urls.append(f'<url><loc>{SITE}/tag/{tg}/</loc><lastmod>{TODAY}</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>')
 wr('sitemap.xml', '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + '\n'.join(urls) + '\n</urlset>\n')
 wr('robots.txt', f'User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n')
 
