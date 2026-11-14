@@ -12,5 +12,10 @@
  "a-rimba-kyoto": {"genre": ["Pop belantara"], "kota": ["Jakarta"], "keluarga": ["Pop"]},
  "dd-dia": {"genre": ["Hipdut"], "kota": [], "keluarga": []},
  "dd-rei-naldy": {"genre": ["Jazz"], "kota": [], "keluarga": []},
- "dd-branta": {"genre": [], "kota": ["Surabaya"], "keluarga": []}
+ "dd-branta": {"genre": [], "kota": ["Surabaya"], "keluarga": []},
+ "dd-fashion-statement": {"genre": ["Indie rock"], "kota": ["Yogyakarta"], "keluarga": ["Rock"]},
+ "dd-ninety-horsepower": {"genre": ["Indie rock"], "kota": [], "keluarga": ["Rock"]},
+ "dd-japanese-bobtail": {"genre": ["Indie pop"], "kota": ["Magelang"], "keluarga": ["Pop"]},
+ "dd-timeless": {"genre": ["Punk"], "kota": ["Surabaya"], "keluarga": ["Rock"]},
+ "dd-wijaya-80": {"genre": [], "kota": [], "keluarga": ["Pop"]}
 }
