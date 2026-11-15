@@ -17,5 +17,7 @@
  "dd-ninety-horsepower": {"genre": ["Indie rock"], "kota": [], "keluarga": ["Rock"]},
  "dd-japanese-bobtail": {"genre": ["Indie pop"], "kota": ["Magelang"], "keluarga": ["Pop"]},
  "dd-timeless": {"genre": ["Punk"], "kota": ["Surabaya"], "keluarga": ["Rock"]},
- "dd-wijaya-80": {"genre": [], "kota": [], "keluarga": ["Pop"]}
+ "dd-wijaya-80": {"genre": [], "kota": [], "keluarga": ["Pop"]},
+ "dd-kapal-udara": {"genre": ["Indie folk"], "kota": ["Makassar"], "keluarga": []},
+ "dd-maliq-kabar-gembira": {"genre": [], "kota": [], "keluarga": ["Pop"]}
 }
