@@ -49,8 +49,8 @@ function baseUrl_() {
 }
 
 function sendConfirm_(email, token) {
-  var link = baseUrl_() + '?a=confirm&t=' + encodeURIComponent(token);
-  var out = baseUrl_() + '?a=unsub&t=' + encodeURIComponent(token);
+  var link = SITE + 'konfirmasi/?a=confirm&t=' + encodeURIComponent(token);
+  var out = SITE + 'konfirmasi/?a=unsub&t=' + encodeURIComponent(token);
   var html = '<p>Halo,</p><p>Seseorang (semoga kamu) mendaftarkan email ini untuk kabar band indie dari <b>zinezine</b>.</p>' +
     '<p><a href="' + link + '" style="background:#FF3D7F;color:#15161C;padding:10px 16px;text-decoration:none;font-weight:700">Ya, konfirmasi langganan saya</a></p>' +
     '<p>Kalau bukan kamu, abaikan saja email ini; tidak akan ada email lanjutan. Berhenti kapan pun: <a href="' + out + '">berhenti berlangganan</a>.</p>' +
@@ -113,6 +113,7 @@ function doPost(e) {
 // Tautan di email: konfirmasi atau berhenti
 function doGet(e) {
   var p = (e && e.parameter) || {};
+  if (p.json) return jsonGet_(p);
   var t = String(p.t || '').toLowerCase();
   if (!/^[0-9a-f-]{36}$/.test(t) || (p.a !== 'confirm' && p.a !== 'unsub')) {
     return page_('Tautan tidak valid', 'Tautan ini tidak dikenali atau sudah kedaluwarsa.');
@@ -135,6 +136,33 @@ function doGet(e) {
     s.getRange(row, 2).setValue('unsubscribed');
     s.getRange(row, 6).setValue(now);
     return page_('Kamu sudah berhenti berlangganan', 'Email kamu tidak akan menerima kabar zinezine lagi.');
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+// Dipanggil dari halaman konfirmasi di situs (tanpa halaman Google, aman untuk banyak akun)
+function jsonGet_(p) {
+  var t = String(p.t || '').toLowerCase();
+  if (!/^[0-9a-f-]{36}$/.test(t) || (p.a !== 'confirm' && p.a !== 'unsub')) return json_({ ok: false });
+  var lock = LockService.getScriptLock();
+  lock.waitLock(15000);
+  try {
+    var s = sheet_();
+    var row = findRow_(s, 3, t);
+    if (row < 0) return json_({ ok: false });
+    var now = new Date();
+    if (p.a === 'confirm') {
+      if (s.getRange(row, 2).getValue() !== 'unsubscribed') {
+        s.getRange(row, 2).setValue('confirmed');
+        s.getRange(row, 5).setValue(now);
+        s.getRange(row, 6).setValue('');
+      }
+    } else {
+      s.getRange(row, 2).setValue('unsubscribed');
+      s.getRange(row, 6).setValue(now);
+    }
+    return json_({ ok: true, a: p.a });
   } finally {
     lock.releaseLock();
   }

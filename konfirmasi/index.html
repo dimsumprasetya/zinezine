@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex"><title>Langganan zinezine</title>
+<style>body{margin:0;min-height:100vh;display:grid;place-items:center;background:#15161C;color:#E8E9E3;font-family:system-ui,sans-serif;text-align:center;padding:24px}h1{font-size:1.6rem}a{color:#FF3D7F;font-weight:700}</style></head>
+<body><div><h1 id="j">Memproses...</h1><p id="p"></p><p><a href="/">Kembali ke zinezine</a></p></div>
+<script>(function(){var U="https://script.google.com/macros/s/AKfycbzwH4PVamIy-1OKMTcb5-x2Wnq4Sp4o7hYsgM8wfR67NboF4bluvzgAQv6srRo2gr2S/exec";
+var q=new URLSearchParams(location.search),a=q.get("a"),t=q.get("t")||"",j=document.getElementById("j"),p=document.getElementById("p");
+function bad(){j.textContent="Tautan tidak valid";p.textContent="Tautan ini tidak dikenali atau sudah kedaluwarsa.";}
+if(!/^[0-9a-f-]{36}$/i.test(t)||(a!=="confirm"&&a!=="unsub")){bad();return;}
+fetch(U+"?json=1&a="+a+"&t="+encodeURIComponent(t),{credentials:"omit"}).then(function(r){return r.json();}).then(function(d){
+if(!d.ok){bad();return;}
+if(a==="confirm"){j.textContent="Langganan dikonfirmasi";p.textContent="Terima kasih! Kamu akan menerima kabar band indie dari zinezine.";}
+else{j.textContent="Kamu sudah berhenti berlangganan";p.textContent="Email kamu tidak akan menerima kabar zinezine lagi.";}
+}).catch(function(){j.textContent="Gagal memproses";p.textContent="Coba muat ulang halaman ini sebentar lagi.";});})();</script></body></html>
