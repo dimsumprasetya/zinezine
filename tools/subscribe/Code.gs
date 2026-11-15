@@ -7,12 +7,13 @@
  * Tidak ada rahasia di file ini. Sheet tetap privat milik pemilik.
  */
 var SHEET = 'Pelanggan';
+var SHEET_ID = '';           // ID Google Sheet (wajib untuk skrip mandiri)
 var SITE = 'https://zinezine.online/';
 var MAX_PER_DAY = 300;      // batas pendaftaran baru per hari (pelindung spam)
 var RESEND_MIN = 10;        // menit minimal sebelum konfirmasi boleh dikirim ulang
 
 function sheet_() {
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var ss = SHEET_ID ? SpreadsheetApp.openById(SHEET_ID) : SpreadsheetApp.getActiveSpreadsheet();
   var s = ss.getSheetByName(SHEET);
   if (!s) {
     s = ss.insertSheet(SHEET);
