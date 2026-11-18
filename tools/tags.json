@@ -23,5 +23,7 @@
  "dd-kpr-suap": {"genre": [], "kota": ["Jakarta"], "keluarga": ["Rock"]},
  "dd-assia-keva-ibu": {"genre": [], "kota": ["Bali"], "keluarga": []},
  "a-beltigs-jepang": {"genre": ["Indie pop", "Post-punk"], "kota": ["Bandung"], "keluarga": ["Pop"]},
- "dd-indische-party": {"genre": ["Rock and roll"], "kota": ["Jakarta"], "keluarga": ["Rock", "Pop"]}
+ "dd-indische-party": {"genre": ["Rock and roll"], "kota": ["Jakarta"], "keluarga": ["Rock", "Pop"]},
+ "dd-eleventwelfth": {"genre": ["Math rock", "Emo"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
+ "dd-greyflowers": {"genre": ["Shoegaze"], "kota": ["Medan"], "keluarga": ["Rock"]}
 }
