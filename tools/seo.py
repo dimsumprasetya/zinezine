@@ -70,6 +70,7 @@ nl = '\r\n' if '\r\n' in src else '\n'
 src = src.replace('\r\n', '\n')
 
 # ---- CSS (semua blok style kecuali yang pertama, yang hanya reset awal) ----
+SHARE_JS = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'share.js'), encoding='utf-8').read()
 styles = re.findall(r'<style>(.*?)</style>', src, re.S)
 css = '\n'.join(styles)
 
@@ -241,6 +242,7 @@ for pid, body in posts:
 <body>
 <div id="reader" class="wrap"><article class="post" id="{pid}">{art}</article></div>
 {FOOT}
+<script>{SHARE_JS}</script>
 </body>
 </html>
 '''

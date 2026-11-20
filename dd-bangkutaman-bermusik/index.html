@@ -376,6 +376,7 @@ a.tg:hover{background:var(--sun);color:#15161C}
 #langganan .lg-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #langganan .lg-msg{margin:10px 0 0;font-family:var(--f-type);font-size:.88rem;min-height:1.2em}
 #langganan .lg-note{margin:10px 0 0;font-size:.8rem;opacity:.85}
+.share{margin:22px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}.share .lbl{flex:1 1 100%}.share .btn{cursor:pointer;font-family:var(--f-type);line-height:1.2}
 
 .post[hidden]{display:block!important}
 </style>
@@ -383,5 +384,34 @@ a.tg:hover{background:var(--sun);color:#15161C}
 <body>
 <div id="reader" class="wrap"><article class="post" id="dd-bangkutaman-bermusik"><nav class="nav" aria-label="Navigasi artikel"><a class="logo" href="/">zine<i>zine</i></a><a class="back" href="/#rubrik">&larr; Daftar Dengar</a></nav><header class="post-head"><span class="lbl">Kaset &middot; 11 Nov 2026</span><h1>Bangkutaman Merilis <i>Bermusik: Arsip Rekaman 2005&ndash;2020</i> dalam Kaset Ganda</h1><p class="post-lede">Kompilasi 25 lagu berisi demo, B-sides, dan versi alternatif dari lima belas tahun perjalanan band, dirilis terbatas lewat PsychoCandy Records.</p></header><figure class="ph"><img src="/img/bangkutaman.jpg" alt="Empat orang berfoto sambil memegang kaset Bangkutaman, Bermusik: Arsip Rekaman 2005-2020" loading="lazy"><figcaption>Foto: redaksi zinezine.</figcaption></figure><dl class="facts"><div><dt>Judul</dt><dd>Bermusik: Arsip Rekaman 2005&ndash;2020</dd></div><div><dt>Isi</dt><dd>25 lagu: demo, B-sides, dan versi alternatif</dd></div><div><dt>Format</dt><dd>Kaset ganda (double cassette), edisi terbatas</dd></div><div><dt>Label</dt><dd>PsychoCandy Records</dd></div><div><dt>Diumumkan</dt><dd>11 November 2026</dd></div></dl><div class="post-body"><p>Bangkutaman merilis <i>Bermusik: Arsip Rekaman 2005&ndash;2020</i>, kompilasi yang merangkum lima belas tahun rekaman band ini dalam format kaset. Pengumuman &ldquo;Out Now&rdquo; disiarkan PsychoCandy Records di Instagram pada 11 November 2026, dalam unggahan yang juga menandai akun @bangkutaman_id.</p><h2>Isi arsipnya</h2><p>Menurut keterangan label, isinya kumpulan demo, B-sides, dan versi alternatif dari rekaman yang tersimpan selama perjalanan Bangkutaman. Totalnya 25 lagu, dan label menyebutnya sebagai album kompilasi terbaik band ini. Rentang waktunya dari 2005 sampai 2020, yang oleh label disebut sebagai catatan perjalanan musikal selama lima belas tahun.</p><h2>Kaset ganda, jumlah terbatas</h2><p>Karena 25 lagu itu dibagi ke dua kaset, rilisan ini berbentuk double cassette dan dicetak dalam jumlah terbatas. Label tidak menyebut jumlah cetaknya. Pemesanan lewat PsychoCandy Records: tokonya berada di Jl. Bangka VI No. 9A, Pela Mampang, Jakarta Selatan (di dalam @playcorner.pc), dan label mencantumkan toko daringnya di Tokopedia (psychocandyshop).</p><p>Catatan redaksi: detail isi dan format kami ambil dari keterangan unggahan Instagram label. Daftar lagu dan tanggal edar rinci belum kami temukan, jadi tidak kami tulis. Fotonya dari redaksi zinezine sendiri.</p></div><div class="listen"><span class="lbl">Dengarkan</span><ul><li><strong>Bangkutaman, Bermusik: Arsip Rekaman 2005-2020</strong><a href="https://open.spotify.com/search/Bangkutaman%20Bermusik" target="_blank" rel="noopener">Spotify</a><a href="https://www.youtube.com/results?search_query=Bangkutaman%20Bermusik" target="_blank" rel="noopener">YouTube</a></li></ul><p>Tautan membuka hasil pencarian Spotify atau YouTube di tab baru. Kaset ini sendiri hanya dijual lewat PsychoCandy Records.</p></div><p class="post-src">Sumber: <a href="https://www.instagram.com/p/DflcU-izFVg/" target="_blank" rel="noopener">Instagram PsychoCandy Records</a> (unggahan kolaborasi dengan <a href="https://www.instagram.com/bangkutaman_id/" target="_blank" rel="noopener">@bangkutaman_id</a>) dan redaksi zinezine. Ditulis ulang oleh redaksi zinezine.</p><div class="related"><span class="lbl">Baca juga</span><ul><li><a href="/dd-maliq-kabar-gembira/">MALIQ &amp; D&rsquo;Essentials Mengajak Rhoma Irama, Bilal Indrajaya, dan Perunggu</a></li><li><a href="/dd-inco/">INCO Menertawakan Omongan Orang lewat <i>Laugh It All Behind</i></a></li></ul></div><p><a class="back" href="/#rubrik">&larr; Kembali ke Daftar Dengar</a></p></article></div>
 <footer><p>zinezine, berita band indie Indonesia dan dunia. <a href="/">Beranda</a> &middot; <a href="/#arsip">Arsip</a> &middot; <a href="mailto:rilis@zinezine.online">rilis@zinezine.online</a></p></footer>
+<script>(function(){
+var SITE='https://zinezine.online/',enc=encodeURIComponent;
+function build(a){
+  var id=a.id;
+  if(!/^(a|dd|e)-/.test(id)||a.querySelector('.share'))return;
+  var h=a.querySelector('h1');if(!h)return;
+  var title=h.textContent.trim(),url=SITE+id+'/';
+  var box=document.createElement('div');box.className='share';
+  var lbl=document.createElement('span');lbl.className='lbl';lbl.textContent='Bagikan artikel ini';box.appendChild(lbl);
+  function link(t,href){var x=document.createElement('a');x.className='btn alt';x.textContent=t;x.href=href;x.target='_blank';x.rel='noopener';box.appendChild(x);}
+  function btn(t,fn,cls){var b=document.createElement('button');b.type='button';b.className=cls||'btn alt';b.textContent=t;b.addEventListener('click',function(){fn(b);});box.appendChild(b);return b;}
+  if(navigator.share){btn('Bagikan\u2026',function(){navigator.share({title:title,url:url}).catch(function(){});},'btn');}
+  link('WhatsApp','https://wa.me/?text='+enc(title+' '+url));
+  link('Telegram','https://t.me/share/url?url='+enc(url)+'&text='+enc(title));
+  link('X','https://twitter.com/intent/tweet?text='+enc(title)+'&url='+enc(url));
+  link('Facebook','https://www.facebook.com/sharer/sharer.php?u='+enc(url));
+  btn('Salin tautan',function(b){
+    function done(){var o=b.textContent;b.textContent='Tersalin \u2713';setTimeout(function(){b.textContent='Salin tautan';},2000);}
+    function old(){var t=document.createElement('textarea');t.value=url;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(t);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,old);}else{old();}
+  });
+  var anchor=a.querySelector('.post-src');
+  if(anchor){anchor.insertAdjacentElement('afterend',box);}
+  else{var r=a.querySelector('.related');if(r){r.parentNode.insertBefore(box,r);}else{a.appendChild(box);}}
+}
+function init(){var l=document.querySelectorAll('article.post');for(var i=0;i<l.length;i++){build(l[i]);}}
+if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',init);}else{init();}
+})();
+</script>
 </body>
 </html>
