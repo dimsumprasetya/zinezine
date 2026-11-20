@@ -379,7 +379,7 @@ a.tg:hover{background:var(--sun);color:#15161C}
 #langganan .lg-hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 #langganan .lg-msg{margin:10px 0 0;font-family:var(--f-type);font-size:.88rem;min-height:1.2em}
 #langganan .lg-note{margin:10px 0 0;font-size:.8rem;opacity:.85}
-.share{margin:22px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}.share .lbl{flex:1 1 100%}.share .btn{cursor:pointer;font-family:var(--f-type);line-height:1.2}
+.share{margin:22px 0;display:flex;flex-wrap:wrap;gap:10px;align-items:center}.share .lbl{flex:1 1 100%}.share-note{flex:1 1 100%;margin:0;font-size:.85rem}.share .btn[disabled]{opacity:.6;cursor:wait}.share .btn{cursor:pointer;font-family:var(--f-type);line-height:1.2}
 </style>
 </head>
 <body>
@@ -605,6 +605,32 @@ a.tg:hover{background:var(--sun);color:#15161C}
 <script>(function(){var SUB_URL="https://script.google.com/macros/s/AKfycbzwH4PVamIy-1OKMTcb5-x2Wnq4Sp4o7hYsgM8wfR67NboF4bluvzgAQv6srRo2gr2S/exec";var box=document.getElementById("langganan");if(!box||!/^https:\/\/script\.google\.com\//.test(SUB_URL))return;box.hidden=false;var SRC="beranda";try{var q=new URLSearchParams(location.search),k=function(n){return (q.get(n)||"").toLowerCase().replace(/[^a-z0-9_-]/g,"").slice(0,16);},us=k("utm_source"),uc=k("utm_campaign");if(us){SRC=us+(uc?"/"+uc:"");sessionStorage.setItem("zz_src",SRC);}else{SRC=sessionStorage.getItem("zz_src")||"beranda";}}catch(x){}var f=document.getElementById("lg-form"),m=document.getElementById("lg-msg"),b=document.getElementById("lg-btn");f.addEventListener("submit",function(ev){ev.preventDefault();var e=f.email.value.trim();if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(e)){m.textContent="Alamat email belum benar.";return;}b.disabled=true;m.textContent="Mengirim...";var body=new URLSearchParams({email:e,website:f.website.value,src:SRC});fetch(SUB_URL,{method:"POST",mode:"no-cors",body:body}).then(function(){m.textContent="Hampir selesai: cek email kamu dan klik tautan konfirmasi (cek juga folder spam).";f.reset();}).catch(function(){m.textContent="Gagal terkirim. Coba lagi sebentar lagi.";}).then(function(){b.disabled=false;});});})();</script>
 <script>/*SHARE-START*/(function(){
 var SITE='https://zinezine.online/',enc=encodeURIComponent;
+
+function wrap(c,t,maxW,maxL){var w=t.split(/\s+/),ls=[],l='';for(var i=0;i<w.length;i++){var x=l?l+' '+w[i]:w[i];if(c.measureText(x).width>maxW&&l){ls.push(l);l=w[i];}else{l=x;}}if(l)ls.push(l);if(ls.length>maxL){ls=ls.slice(0,maxL);ls[maxL-1]=ls[maxL-1].replace(/\s*\S*$/,'')+'…';}return ls;}
+function loadImg(src){return new Promise(function(ok){if(!src){ok(null);return;}var im=new Image();im.crossOrigin='anonymous';im.onload=function(){ok(im);};im.onerror=function(){ok(null);};im.src=src;});}
+function makeCard(a,W,H){
+  var h=a.querySelector('h1'),title=h.textContent.trim(),lb=a.querySelector('.post-head .lbl'),label=lb?lb.textContent.replace(/\s+/g,' ').trim():'zinezine';
+  var fi=a.querySelector('figure.ph img'),src=fi?(fi.currentSrc||fi.src):'';
+  var fonts=document.fonts&&document.fonts.load?Promise.all([document.fonts.load('64px "Archivo Black"'),document.fonts.load('32px "Special Elite"')]).catch(function(){}):Promise.resolve();
+  return Promise.all([loadImg(src),fonts]).then(function(r){
+    var im=r[0],cv=document.createElement('canvas');cv.width=W;cv.height=H;var c=cv.getContext('2d');
+    c.fillStyle='#15161C';c.fillRect(0,0,W,H);
+    var pad=64,top=W===1080&&H===1920?200:0,ph=H===1920?980:620;
+    if(im){var y0=top,sc=Math.max(W/im.width,ph/im.height),sw=W/sc,sh=ph/sc;c.drawImage(im,(im.width-sw)/2,(im.height-sh)/2,sw,sh,0,y0,W,ph);}
+    else{c.fillStyle='#FF3D7F';c.fillRect(0,top,W,ph);}
+    var y=top+ph+(H===1920?70:56);
+    c.textBaseline='top';c.font='32px "Special Elite","Courier New",monospace';
+    var lw=Math.min(c.measureText(label.toUpperCase()).width+36,W-2*pad);
+    c.fillStyle='#FF3D7F';c.fillRect(pad,y,lw,54);c.fillStyle='#15161C';c.fillText(label.toUpperCase(),pad+18,y+9,lw-36);
+    y+=54+34;
+    var fs=H===1920?72:60;c.font=fs+'px "Archivo Black","Arial Black",Impact,sans-serif';c.fillStyle='#EEEEE6';
+    var ls=wrap(c,title,W-2*pad,H===1920?6:4);
+    for(var i=0;i<ls.length;i++){c.fillText(ls[i],pad,y+i*(fs*1.18));}
+    c.font='40px "Special Elite","Courier New",monospace';c.fillStyle='#FF5C93';c.textBaseline='alphabetic';
+    c.fillText('zinezine.online',pad,H-(H===1920?150:56));
+    return new Promise(function(ok){cv.toBlob(function(b){ok(b);},'image/png');});
+  });
+}
 function build(a){
   var id=a.id;
   if(!/^(a|dd|e)-/.test(id)||a.querySelector('.share'))return;
@@ -619,11 +645,28 @@ function build(a){
   link('Telegram','https://t.me/share/url?url='+enc(url)+'&text='+enc(title));
   link('X','https://twitter.com/intent/tweet?text='+enc(title)+'&url='+enc(url));
   link('Facebook','https://www.facebook.com/sharer/sharer.php?u='+enc(url));
+  var note=document.createElement('p');note.className='share-note';note.hidden=true;
+  function ig(kind,W,H){btn('IG '+kind,function(b){
+    var o=b.textContent;b.textContent='Membuat gambar…';b.disabled=true;
+    makeCard(a,W,H).then(function(blob){
+      b.textContent=o;b.disabled=false;if(!blob)return;
+      var f=new File([blob],'zinezine-'+id+'-'+kind.toLowerCase()+'.png',{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[f]})){
+        navigator.share({files:[f],text:title+' '+url}).catch(function(){});
+      }else{
+        var u=URL.createObjectURL(blob),l=document.createElement('a');l.href=u;l.download=f.name;document.body.appendChild(l);l.click();document.body.removeChild(l);setTimeout(function(){URL.revokeObjectURL(u);},4000);
+        if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).catch(function(){});}
+        note.textContent='Gambar '+kind+' sudah diunduh dan tautan artikel disalin. Buka Instagram, pilih '+kind+', lalu pilih gambarnya (di Story, tempel tautan lewat stiker Tautan).';note.hidden=false;
+      }
+    }).catch(function(){b.textContent=o;b.disabled=false;});
+  });}
+  ig('Story',1080,1920);ig('Post',1080,1350);
   btn('Salin tautan',function(b){
     function done(){var o=b.textContent;b.textContent='Tersalin \u2713';setTimeout(function(){b.textContent='Salin tautan';},2000);}
     function old(){var t=document.createElement('textarea');t.value=url;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');done();}catch(e){}document.body.removeChild(t);}
     if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(done,old);}else{old();}
   });
+  box.appendChild(note);
   var anchor=a.querySelector('.post-src');
   if(anchor){anchor.insertAdjacentElement('afterend',box);}
   else{var r=a.querySelector('.related');if(r){r.parentNode.insertBefore(box,r);}else{a.appendChild(box);}}
