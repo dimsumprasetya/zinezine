@@ -27,5 +27,7 @@
  "dd-eleventwelfth": {"genre": ["Math rock", "Emo"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
  "dd-greyflowers": {"genre": ["Shoegaze"], "kota": ["Medan"], "keluarga": ["Rock"]},
  "dd-inco": {"genre": ["Pop-punk", "Punk"], "kota": ["Palembang"], "keluarga": ["Rock"]},
- "dd-theovertunes-kini-gini": {"genre": [], "kota": [], "keluarga": ["Pop"]}
+ "dd-theovertunes-kini-gini": {"genre": [], "kota": [], "keluarga": ["Pop"]},
+ "dd-alpha-mortal-foxtrot": {"genre": ["Indie rock", "Post-punk"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
+ "a-basajan-thailand": {"genre": ["Psychedelic", "Instrumental"], "kota": ["Bandung", "Jakarta"], "keluarga": []}
 }
