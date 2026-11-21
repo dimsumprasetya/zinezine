@@ -29,5 +29,8 @@
  "dd-inco": {"genre": ["Pop-punk", "Punk"], "kota": ["Palembang"], "keluarga": ["Rock"]},
  "dd-theovertunes-kini-gini": {"genre": [], "kota": [], "keluarga": ["Pop"]},
  "dd-alpha-mortal-foxtrot": {"genre": ["Indie rock", "Post-punk"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
- "a-basajan-thailand": {"genre": ["Psychedelic", "Instrumental"], "kota": ["Bandung", "Jakarta"], "keluarga": []}
+ "a-basajan-thailand": {"genre": ["Psychedelic", "Instrumental"], "kota": ["Bandung", "Jakarta"], "keluarga": []},
+ "a-lorjhu-tur-asia-tenggara": {"genre": ["Indie rock"], "kota": ["Madura"], "keluarga": ["Rock"]},
+ "dd-bilal-indrajaya-sah": {"genre": [], "kota": [], "keluarga": []},
+ "dd-jal-brahim-meucawo": {"genre": ["Elektronik"], "kota": ["Banda Aceh"], "keluarga": []}
 }
