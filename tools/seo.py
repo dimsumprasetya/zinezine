@@ -145,7 +145,7 @@ def drop_embeds(h):
 
 
 FOOT = ('<footer><p>zinezine, berita band indie Indonesia dan dunia. '
-        '<a href="/">Beranda</a> &middot; <a href="/#arsip">Arsip</a> &middot; '
+        '<a href="/">Beranda</a> &middot; <a href="/#arsip">Arsip</a> &middot; <a href="/privasi/">Kebijakan privasi</a> &middot; '
         '<a href="mailto:rilis@zinezine.online">rilis@zinezine.online</a></p></footer>')
 
 pages = []  # (id, title, desc, date, image)

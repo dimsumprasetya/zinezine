@@ -2,7 +2,7 @@
 
 Berita band indie Indonesia dan dunia. Situs statis satu halaman (`index.html`), dilayani lewat GitHub Pages.
 
-Foto memakai lisensi bebas dari Wikimedia Commons, kredit ada di bawah tiap foto. Ringkasan berita ditulis ulang redaksi dan menaut ke sumber aslinya.
+Foto: lisensi bebas Wikimedia Commons, foto dari band atau redaksi, dan thumbnail video YouTube (hak cipta pada pemilik kanal). Kredit ada di bawah tiap foto. Ringkasan berita ditulis ulang redaksi dan menaut ke sumber aslinya.
 
 ## SEO
 
