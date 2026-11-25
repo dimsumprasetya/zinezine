@@ -1,37 +1,352 @@
 {
- "a-dongker-batal": {"genre": ["Punk"], "kota": ["Bandung"], "keluarga": ["Rock"]},
- "dd-akupergi": {"genre": ["Post-punk"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
- "dd-nalara": {"genre": ["Folk rock"], "kota": ["Subang"], "keluarga": ["Rock"]},
- "dd-haul": {"genre": ["Death metal"], "kota": ["Bandung"], "keluarga": ["Rock"]},
- "dd-zorrrya": {"genre": ["Rock alternatif"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
- "dd-rony-parulian": {"genre": ["Pop-rock"], "kota": [], "keluarga": ["Rock", "Pop"]},
- "a-rumahsakit": {"genre": ["Indie rock"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
- "dd-haira": {"genre": ["City pop"], "kota": [], "keluarga": ["Pop"]},
- "dd-iga-massardi": {"genre": ["Pop mellow"], "kota": [], "keluarga": ["Pop"]},
- "dd-teddy-adhitya": {"genre": ["R&B"], "kota": [], "keluarga": ["Pop"]},
- "a-rimba-kyoto": {"genre": ["Pop belantara"], "kota": ["Jakarta"], "keluarga": ["Pop"]},
- "dd-dia": {"genre": ["Hipdut"], "kota": [], "keluarga": []},
- "dd-rei-naldy": {"genre": ["Jazz"], "kota": [], "keluarga": []},
- "dd-branta": {"genre": [], "kota": ["Surabaya"], "keluarga": []},
- "dd-fashion-statement": {"genre": ["Indie rock"], "kota": ["Yogyakarta"], "keluarga": ["Rock"]},
- "dd-ninety-horsepower": {"genre": ["Indie rock"], "kota": [], "keluarga": ["Rock"]},
- "dd-japanese-bobtail": {"genre": ["Indie pop"], "kota": ["Magelang"], "keluarga": ["Pop"]},
- "dd-timeless": {"genre": ["Punk"], "kota": ["Surabaya"], "keluarga": ["Rock"]},
- "dd-wijaya-80": {"genre": [], "kota": [], "keluarga": ["Pop"]},
- "dd-kapal-udara": {"genre": ["Indie folk"], "kota": ["Makassar"], "keluarga": []},
- "dd-maliq-kabar-gembira": {"genre": [], "kota": [], "keluarga": ["Pop"]},
- "dd-kpr-suap": {"genre": [], "kota": ["Jakarta"], "keluarga": ["Rock"]},
- "dd-assia-keva-ibu": {"genre": [], "kota": ["Bali"], "keluarga": []},
- "a-beltigs-jepang": {"genre": ["Indie pop", "Post-punk"], "kota": ["Bandung"], "keluarga": ["Pop"]},
- "dd-indische-party": {"genre": ["Rock and roll"], "kota": ["Jakarta"], "keluarga": ["Rock", "Pop"]},
- "dd-eleventwelfth": {"genre": ["Math rock", "Emo"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
- "dd-greyflowers": {"genre": ["Shoegaze"], "kota": ["Medan"], "keluarga": ["Rock"]},
- "dd-inco": {"genre": ["Pop-punk", "Punk"], "kota": ["Palembang"], "keluarga": ["Rock"]},
- "dd-theovertunes-kini-gini": {"genre": [], "kota": [], "keluarga": ["Pop"]},
- "dd-alpha-mortal-foxtrot": {"genre": ["Indie rock", "Post-punk"], "kota": ["Jakarta"], "keluarga": ["Rock"]},
- "a-basajan-thailand": {"genre": ["Psychedelic", "Instrumental"], "kota": ["Bandung", "Jakarta"], "keluarga": []},
- "a-lorjhu-tur-asia-tenggara": {"genre": ["Indie rock"], "kota": ["Madura"], "keluarga": ["Rock"]},
- "dd-bilal-indrajaya-sah": {"genre": [], "kota": [], "keluarga": []},
- "dd-jal-brahim-meucawo": {"genre": ["Elektronik"], "kota": ["Banda Aceh"], "keluarga": []},
- "dd-jimi-multhazam-mollydenvm": {"genre": ["Funk"], "kota": ["Jakarta"], "keluarga": []}
+ "a-dongker-batal": {
+  "genre": [
+   "Punk"
+  ],
+  "kota": [
+   "Bandung"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-akupergi": {
+  "genre": [
+   "Post-punk"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-nalara": {
+  "genre": [
+   "Folk rock"
+  ],
+  "kota": [
+   "Subang"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-haul": {
+  "genre": [
+   "Death metal"
+  ],
+  "kota": [
+   "Bandung"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-zorrrya": {
+  "genre": [
+   "Rock alternatif"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-rony-parulian": {
+  "genre": [
+   "Pop-rock"
+  ],
+  "kota": [],
+  "keluarga": [
+   "Rock",
+   "Pop"
+  ]
+ },
+ "a-rumahsakit": {
+  "genre": [
+   "Indie rock"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-haira": {
+  "genre": [
+   "City pop"
+  ],
+  "kota": [],
+  "keluarga": [
+   "Pop"
+  ]
+ },
+ "dd-iga-massardi": {
+  "genre": [
+   "Pop mellow"
+  ],
+  "kota": [],
+  "keluarga": [
+   "Pop"
+  ]
+ },
+ "dd-teddy-adhitya": {
+  "genre": [
+   "R&B"
+  ],
+  "kota": [],
+  "keluarga": [
+   "Pop"
+  ]
+ },
+ "a-rimba-kyoto": {
+  "genre": [
+   "Pop belantara"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Pop"
+  ]
+ },
+ "dd-dia": {
+  "genre": [
+   "Hipdut"
+  ],
+  "kota": [],
+  "keluarga": []
+ },
+ "dd-rei-naldy": {
+  "genre": [
+   "Jazz"
+  ],
+  "kota": [],
+  "keluarga": []
+ },
+ "dd-branta": {
+  "genre": [],
+  "kota": [
+   "Surabaya"
+  ],
+  "keluarga": []
+ },
+ "dd-fashion-statement": {
+  "genre": [
+   "Indie rock"
+  ],
+  "kota": [
+   "Yogyakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-ninety-horsepower": {
+  "genre": [
+   "Indie rock"
+  ],
+  "kota": [],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-japanese-bobtail": {
+  "genre": [
+   "Indie pop"
+  ],
+  "kota": [
+   "Magelang"
+  ],
+  "keluarga": [
+   "Pop"
+  ]
+ },
+ "dd-timeless": {
+  "genre": [
+   "Punk"
+  ],
+  "kota": [
+   "Surabaya"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-wijaya-80": {
+  "genre": [],
+  "kota": [],
+  "keluarga": [
+   "Pop"
+  ]
+ },
+ "dd-kapal-udara": {
+  "genre": [
+   "Indie folk"
+  ],
+  "kota": [
+   "Makassar"
+  ],
+  "keluarga": []
+ },
+ "dd-maliq-kabar-gembira": {
+  "genre": [],
+  "kota": [],
+  "keluarga": [
+   "Pop"
+  ]
+ },
+ "dd-kpr-suap": {
+  "genre": [],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-assia-keva-ibu": {
+  "genre": [],
+  "kota": [
+   "Bali"
+  ],
+  "keluarga": []
+ },
+ "a-beltigs-jepang": {
+  "genre": [
+   "Indie pop",
+   "Post-punk"
+  ],
+  "kota": [
+   "Bandung"
+  ],
+  "keluarga": [
+   "Pop"
+  ]
+ },
+ "dd-indische-party": {
+  "genre": [
+   "Rock and roll"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock",
+   "Pop"
+  ]
+ },
+ "dd-eleventwelfth": {
+  "genre": [
+   "Math rock",
+   "Emo"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-greyflowers": {
+  "genre": [
+   "Shoegaze"
+  ],
+  "kota": [
+   "Medan"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-inco": {
+  "genre": [
+   "Pop-punk",
+   "Punk"
+  ],
+  "kota": [
+   "Palembang"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-theovertunes-kini-gini": {
+  "genre": [],
+  "kota": [],
+  "keluarga": [
+   "Pop"
+  ]
+ },
+ "dd-alpha-mortal-foxtrot": {
+  "genre": [
+   "Indie rock",
+   "Post-punk"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "a-basajan-thailand": {
+  "genre": [
+   "Psychedelic",
+   "Instrumental"
+  ],
+  "kota": [
+   "Bandung",
+   "Jakarta"
+  ],
+  "keluarga": []
+ },
+ "a-lorjhu-tur-asia-tenggara": {
+  "genre": [
+   "Indie rock"
+  ],
+  "kota": [
+   "Madura"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-bilal-indrajaya-sah": {
+  "genre": [],
+  "kota": [],
+  "keluarga": []
+ },
+ "dd-jal-brahim-meucawo": {
+  "genre": [
+   "Elektronik"
+  ],
+  "kota": [
+   "Banda Aceh"
+  ],
+  "keluarga": []
+ },
+ "dd-jimi-multhazam-mollydenvm": {
+  "genre": [
+   "Funk"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": []
+ },
+ "dd-silent-spring-terbenam": {
+  "genre": [
+   "Rock alternatif"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ }
 }
