@@ -381,5 +381,42 @@
   "keluarga": [
    "Rock"
   ]
+ },
+ "dd-mathology-sangrama": {
+  "genre": [
+   "Math rock",
+   "Instrumental"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-parking-lot-promises-departure": {
+  "genre": [
+   "Indie rock",
+   "Rock alternatif",
+   "Shoegaze",
+   "Emo"
+  ],
+  "kota": [
+   "Jakarta"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
+ },
+ "dd-heavener-pathetic": {
+  "genre": [
+   "Metalcore"
+  ],
+  "kota": [
+   "Surabaya"
+  ],
+  "keluarga": [
+   "Rock"
+  ]
  }
 }
